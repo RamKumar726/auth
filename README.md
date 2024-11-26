@@ -293,4 +293,6 @@ This project demonstrates a practical implementation of **Role-Based Access Cont
 
 The modular architecture allows easy scalability and integration into larger systems, making it a robust solution for VRV Security's requirements.
 
+[To know more click here](.\doc\README.pdf)
+
 

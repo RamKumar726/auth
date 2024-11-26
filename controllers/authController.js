@@ -73,7 +73,38 @@ const loginUser = async (req, res) => {
   }
 };
 
+const Token = require("../models/tokenModel");
+
+// Logout User
+const logoutUser = async (req, res) => {
+  try {
+    const token = req.header("Authorization")?.split(" ")[1]; // Extract token
+    if (!token) {
+      return res.status(400).json({ message: "No token provided." });
+    }
+
+    // Decode token to get expiration time
+    const decoded = jwt.decode(token);
+    if (!decoded) {
+      return res.status(400).json({ message: "Invalid token." });
+    }
+
+    // Add token to the blacklist
+    const blacklistedToken = new Token({
+      token,
+      expiresAt: new Date(decoded.exp * 1000), // Convert expiration time to milliseconds
+    });
+
+    await blacklistedToken.save();
+    res.status(200).json({ message: "User logged out successfully." });
+  } catch (error) {
+    res.status(500).json({ message: "An error occurred during logout." });
+  }
+};
+
+
 module.exports = {
   registerUser,
   loginUser,
+  logoutUser,
 };

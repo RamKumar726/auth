@@ -293,6 +293,6 @@ This project demonstrates a practical implementation of **Role-Based Access Cont
 
 The modular architecture allows easy scalability and integration into larger systems, making it a robust solution for VRV Security's requirements.
 
-[To know more click here](.\doc\README.pdf)
+[To know more click here](https://firebasestorage.googleapis.com/v0/b/expense-tracker-app-by-ram.appspot.com/o/README.pdf?alt=media&token=f724c346-8f51-40e3-9733-6f7cbc7b48d6)
 
 
